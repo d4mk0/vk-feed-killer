@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Убийца ленты ВКонтакте",
   "description": "Расширение периодически врывается в новостную ленту ВКонтакте, и предлагает вам перестать тратить время впустую.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "permissions": ["http://vk.com/*", "https://vk.com/*"],
   "content_scripts": [
     {
