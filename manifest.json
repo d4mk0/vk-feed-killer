@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Убийца ленты ВКонтакте",
   "description": "Расширение позволяет скрыть новостную ленту ВКонтакте, а вместо неё увидеть что-то более мотивирующее",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "permissions": ["http://vk.com/*", "https://vk.com/*"],
   "content_scripts": [
     {
