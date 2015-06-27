@@ -1,13 +1,14 @@
 blockquote{
   display:block;
   background: #fff;
-  padding: 15px 20px 15px 45px;
-  margin: 0 0 20px;
+  padding: 20px 50px 50px 45px;
+  margin: 0;
   position: relative;
+  text-align: center;
   
   /*Font*/
   font-family: Georgia, serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.2;
   color: #666;
   text-align: justify;
@@ -16,13 +17,27 @@ blockquote{
   border-left: 15px solid #2B587A;
   border-right: 2px solid #2B587A;
   
-  /*Box Shadow - (Optional)*/
-  -moz-box-shadow: 2px 2px 15px #ccc;
-  -webkit-box-shadow: 2px 2px 15px #ccc;
-  box-shadow: 2px 2px 15px #ccc;
+  /*Box Shadow - (Optional)*//*
+  -moz-box-shadow: 0px 10px 15px #ccc;
+  -webkit-box-shadow: 0px 10px 15px #ccc;
+  box-shadow: 0px 10px 15px #ccc;*/
 }
 
-blockquote::before{
+blockquote .text {
+  color: #666;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+blockquote .author {
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 40px;
+  text-align: right;
+}
+
+blockquote .text::before{
   content: "\201C"; /*Unicode for Left Double Quote*/
   
   /*Font*/
@@ -32,14 +47,26 @@ blockquote::before{
   color: #999;
   
   /*Positioning*/
-  position: absolute;
-  left: 10px;
-  top:5px;
+  position: relative;
+  left: -15px;
+  top: -20px;
+  float:left;
 }
 
-blockquote::after{
-  /*Reset to make sure*/
-  content: "";
+blockquote .text::after{
+  content: "\201D"; /*Unicode for Left Double Quote*/
+  
+  /*Font*/
+  font-family: Georgia, serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #999;
+  
+  /*Positioning*/
+  position: relative;
+  left: 30px;
+  top: -15px;
+  float:right;
 }
 
 blockquote a{
@@ -57,3 +84,26 @@ blockquote a:hover{
 blockquote em{
   font-style: italic;
 }
+
+#vkfk-dialog-text {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#vkfk-dialog-ok {
+  margin-right: 15px;
+  position: relative;
+  top: 5px;
+}
+
+#vkfk-dialog-buttons {
+  margin: 20px 0;
+}
+
+#vkfk-quote {
+  text-align: center;
+  line-height: 0.5;
+}
+
+
+

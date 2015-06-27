@@ -1,5 +1,5 @@
 #!/bin/bash
-
+rm -rf tmp/
 mkdir tmp
 cp manifest.json tmp/
 cp icons/* tmp/
@@ -9,4 +9,4 @@ cp styles.css tmp/
 
 REVISION=$(git describe --always --tag)
 zip -r builds/vk-feed-killer_$REVISION.zip tmp
-rm -rf tmp/
+# rm -rf tmp/
