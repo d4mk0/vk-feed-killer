@@ -64,7 +64,7 @@ buttonsIdName = "vkfk-dialog-buttons";
 
 
 scrollToRestore = undefined;
-viewFeedTime = 500;
+viewFeedTime = 60000;
 
 mode = "feed"; // Possible modes: feed, vkfk
 
