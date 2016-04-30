@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Убийца ленты ВКонтакте",
+  "name": "VK Feed Killer",
   "description": "Расширение периодически врывается в новостную ленту ВКонтакте, и предлагает вам перестать тратить время впустую.",
-  "version": "0.0.3",
-  "permissions": ["http://vk.com/*", "https://vk.com/*"],
+  "version": "1.0.0",
+  "permissions": ["http://vk.com/*", "https://vk.com/*", "http://new.vk.com/*", "https://new.vk.com/*"],
   "content_scripts": [
     {
-      "matches": ["http://vk.com/*", "https://vk.com/*"],
+      "matches": ["http://vk.com/*", "https://vk.com/*", "http://new.vk.com/*", "https://new.vk.com/*"],
       "js": ["jquery-2.1.4.min.js", "runner.js"],
       "css": ["styles.css"]
     }

@@ -67,6 +67,10 @@ scrollToRestore = undefined;
 viewFeedTime = 60000;
 
 mode = "feed"; // Possible modes: feed, vkfk
+debugMode = false;
+// if(debugMode) {
+//   console.log("");
+// }
 
 timerStartedAt = 0;
 quote = quotesList[Math.floor(Math.random() * quotesList.length)];
@@ -81,15 +85,25 @@ function awaitTimer() {
   if(!timerStartedAt) {
     timerStartedAt = Date.now();
     setTimeout(function() {
-      if(onNewsPage())
+      if(onNewsPage()) {
+        if(debugMode) {
+          console.log("calling showDialog()");
+        }
         showDialog();
-      else
+      } else {
         timerStartedAt = 0;
+        if(debugMode) {
+          console.log("timerStartedAt = 0");
+        }
+      }
     }, viewFeedTime)
   }
 }
 
 function hideFeed() {
+  if(debugMode) {
+    console.log("in hideFeed()");
+  }
   $.each(unproductiveSelectors, function(i, selector) {
     selectorsForShowing[selector] = !($(selector).css('display') == 'none');
   });
@@ -97,6 +111,9 @@ function hideFeed() {
 }
 
 function showFeed() {
+  if(debugMode) {
+    console.log("in showFeed()");
+  }
   mode = "feed";
   $.each(selectorsForShowing, function(selector, shouldShown) {
     if(shouldShown)
@@ -107,6 +124,9 @@ function showFeed() {
 }
 
 function showQuote() {
+  if(debugMode) {
+    console.log("in showQuote()");
+  }
   hideFeed();
   $('#' + dialogIdName).hide();
   $('#' + quoteIdName).show();
@@ -117,6 +137,9 @@ function onNewsPage() {
 }
 
 function showDialog() {
+  if(debugMode) {
+    console.log("in showDialog()");
+  }
   mode = "vkfk";
   $.each(unproductiveSelectors, function(i, selector) {
     selectorsForShowing[selector] = !($(selector).css('display') == 'none');
@@ -151,6 +174,9 @@ function newPostsButtonShown() {
 }
 
 setInterval(function() {
+  if(debugMode) {
+    console.log("in main interval");
+  }
   if(onNewsPage() && (Date.now() - timerStartedAt + viewFeedTime > 0))
     awaitTimer();
   else
